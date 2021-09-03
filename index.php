@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Test </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/jqueryui/1.12.1/jquery-ui.min.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="ajax.js"></script>
+    <script>
+        $( function() {
+            $( "#slider1" ).slider({
+                range: 'max',
+                min: 1000,
+                max: 3000000,
+                slide: function(event, ui) {
+                    $('#sum1').val(ui.value);
+                },
+            });
+        } );
+        $( function() {
+            $( "#slider2" ).slider({
+                range: 'max',
+                min: 1000,
+                max: 3000000,
+                slide: function(event, ui) {
+                    $('#sum2').val(ui.value);
+                }
+            });
+        } );
+    </script>
+    <script>
+        $( function() {
+            $( "#datepicker" ).datepicker({
+                dateFormat: "dd.mm.yy"
+            });
+        } );
+    </script>
+</head>
+
+<body>
+
+<header>
+    <div><a href=""> <img src="logo.png" class="header_logo" alt=""> </a>
+        <p class="header_title"> WORLD BANK Publications
+        <p></div>
+
+    <div class="phone_number"><p>8-800-100-5005
+        <p>
+        <p> +7(3452)522-000
+        <p>
+    </div>
+</header>
+
+<main>
+    <nav class="navigation_bar">
+        <a href="#"> Кредитные карты </a>
+        <a href="#"> Вклады </a>
+        <a href="#"> Дебетовая карта  </a>
+        <a href="#"> Страхование </a>
+        <a href="#"> Друзья  </a>
+        <a href="#"> Интернет-банк </a>
+    </nav>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html"> Главная </a></li>
+        <li class="breadcrumb-item"><a href="#"> Вклады </a></li>
+        <li class="breadcrumb-item active"> Калькулятор</li>
+    </ol>
+
+    <form class="calculator" mehod="POST" action="" id="ajax_form">
+        <h1 class="heading">Калькулятор</h1>
+        <div class="column1">
+            <div class="col1row1">
+                Дата оформления вклада
+            </div>
+            <div class="col1row2">
+                Сумма вклада
+            </div>
+            <div class="col1row3">
+                Срок вклада
+            </div>
+            <div class="col1row4">
+                Пополнение вклада
+            </div>
+            <div class="col1row5">
+                Сумма пополнения вклада
+            </div>
+        </div>
+        <div class="column2">
+            <div class="col2row1" name="">
+                <input type="text" id="datepicker">
+            </div>
+            <div class="col2row2">
+                <input type="number" id="sum1" min="1000" max="3000000" name="summn1">
+            </div>
+            <div class="col2row3">
+                <select name="years">
+                    <option value="1">1 год</option>
+                    <option value="2">2 года</option>
+                    <option value="3">3 года</option>
+                    <option value="4">4 года</option>
+                    <option value="5">5 лет</option>
+                </select>
+            </div>
+            <div class="col2row4" name="">
+                <input type="radio" name="radio" value="1"> Да
+                <input type="radio" name="radio" value="0" checked> Нет
+            </div>
+            <div class="col2row5" >
+                <input type="number" min="1000" max="3000000" id="sum2" name="summadd">
+            </div>
+        </div>
+        <div class="column3">
+            <div class="col3row2" id="slider1"></div>
+            <div class="col3row5" id="slider2"></div>
+        </div>
+        <div class="calc_button-field">
+            <input class="calc_button" id="button" type="submit" value="Рассчитать">
+        </div>
+        <div id="result_form"></div>
+    </form>
+
+</main>
+<footer>
+    <div>
+        <nav class="nav_footer">
+            <a href="#"> Кредитные карты </a>
+            <a href="#"> Вклады </a>
+            <a href="#"> Дебетовая карта </a>
+            <a href="#"> Страхование </a>
+            <a href="#"> Друзья </a>
+            <a href="#"> Интернет-банк </a>
+        </nav>
+    </div>
+</footer>
+
+</body>
+
+</html>
